@@ -20,6 +20,7 @@ class _ShowDataState extends State<ShowData> {
     print('fetch is working');
     var temp = await getHttp1();
     list = temp.articles == null ? [] : temp.articles;
+
     setState(() {});
   }
 
