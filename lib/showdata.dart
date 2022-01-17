@@ -26,19 +26,36 @@ class _ShowDataState extends State<ShowData> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      body: list == null
-          ? Center(
-              child: CircularProgressIndicator(),
-            )
-          : list.isEmpty
-              ? Center(child: Text('No data available'))
-              : ListView.builder(
-                  itemBuilder: (_, i) => ListTile(
-                    title: Text('${list[i].title}'),
-                    subtitle: Text('${list[i].description}'),
-                  ),
-                  itemCount: list.length,
-                ),
-    );
+        body: list == null
+            ? Center(
+                child: CircularProgressIndicator(),
+              )
+            : list.isEmpty
+                ? Center(child: Text('No data available'))
+                : ListView.builder(
+                    itemBuilder: (_, i) => Padding(
+                      padding: EdgeInsets.all(20),
+                      child: Column(
+                        children: <Widget>[
+                          Image.network(list[i].urlToImage),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            '${list[i].title}',
+                            style: TextStyle(color: Colors.black, fontSize: 15),
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text(
+                            '${list[i].description}',
+                            style: TextStyle(color: Colors.black, fontSize: 10),
+                          ),
+                        ],
+                      ),
+                    ),
+                    itemCount: 18,
+                  ));
   }
 }
