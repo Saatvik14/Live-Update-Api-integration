@@ -1,4 +1,5 @@
 import 'package:apilive/api2.dart';
+import 'package:apilive/info_page.dart';
 import 'package:apilive/showdata.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +9,7 @@ void main() {
     home: MyApp(),
   ));
   /*int p = 251001;*/
-  getHttp1();
+  //getHttp1();
 }
 
 class MyApp extends StatefulWidget {
@@ -19,6 +20,6 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return new ShowData();
+    return new InfoPage(201012);
   }
 }
